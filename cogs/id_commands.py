@@ -131,7 +131,6 @@ class IDCommands(commands.Cog):
         ctx = await self.bot.get_context(message)
         if ctx.command is not None:
             # Let commands be processed normally and exit early
-            await self.bot.process_commands(message)
             return
 
         content = message.content.strip().lower()
