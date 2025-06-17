@@ -98,12 +98,12 @@ class IDCommands(commands.Cog):
 
     @commands.command(name="a")
     async def quiz_a(self, ctx):
-        """Start a deep space object identification quiz (all objects)"""
+        """Start a deep space object identification quiz (division C)"""
         await self.start_quiz(ctx, mode="a")
 
     @commands.command(name="b")
     async def quiz_b(self, ctx):
-        """Start a deep space object identification quiz (non-exoplanet objects only)"""
+        """Start a deep space object identification quiz (division B)"""
         await self.start_quiz(ctx, mode="b")
 
     @commands.command(name="pic")
