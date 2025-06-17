@@ -71,7 +71,7 @@ class IDCommands(commands.Cog):
             return
 
         if mode == "b":
-            filtered_data = [d for d in self.dso_data if not d.get("exoplanet", False)]
+            filtered_data = [d for d in self.dso_data if d.get("division") == "B"]
         else:
             filtered_data = self.dso_data
 

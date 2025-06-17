@@ -6,7 +6,7 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Crab_Nebula.jpg/1280px-Crab_Nebula.jpg",
       "https://cdn.eso.org/images/screen/potw1523a.jpg"
     ],
-    "exoplanet": false
+    "division": "B"
   },
   {
     "name": "Orion Nebula",
@@ -15,6 +15,6 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg/1280px-Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg",
       "https://c02.purpledshub.com/uploads/sites/48/2019/06/19_WilliamBrown_OrionNebula-d81953f.jpg?webp=1&w=1200"
     ],
-    "exoplanet": false
+    "division": "B"
   }
 ]
