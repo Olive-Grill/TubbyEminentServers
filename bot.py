@@ -45,6 +45,13 @@ async def on_ready():
                                 name="the stars 🌠✨")
     await bot.change_presence(activity=activity)
     print(f"✅ Astrobo ready — logged in as {bot.user}!")
+    
+    # Send restart completion message if restarted
+    if hasattr(bot, 'restart_channel_id'):
+        channel = bot.get_channel(bot.restart_channel_id)
+        if channel:
+            await channel.send("✅ Bot has restarted successfully!")
+        delattr(bot, 'restart_channel_id')
 
 
 # Restart command only for OWNER_ID
@@ -56,6 +63,10 @@ async def restart_bot(ctx):
         return
 
     await ctx.send("🔄 Restarting bot...")
+    
+    # Store channel ID to send confirmation message after restart
+    bot.restart_channel_id = ctx.channel.id
+    
     await bot.close()  # clean shutdown
 
     # Restart the bot script
