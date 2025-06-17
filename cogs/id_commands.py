@@ -98,14 +98,17 @@ class IDCommands(commands.Cog):
 
     @commands.command(name="a")
     async def quiz_a(self, ctx):
+        """Start a deep space object identification quiz (all objects)"""
         await self.start_quiz(ctx, mode="a")
 
     @commands.command(name="b")
     async def quiz_b(self, ctx):
+        """Start a deep space object identification quiz (non-exoplanet objects only)"""
         await self.start_quiz(ctx, mode="b")
 
     @commands.command(name="pic")
     async def another_pic(self, ctx):
+        """Get another image for your current quiz"""
         if ctx.author.id not in self.current_quiz:
             await ctx.send("You don't have an active quiz. Use `a` or `b` to start one.")
             return
@@ -114,6 +117,7 @@ class IDCommands(commands.Cog):
 
     @commands.command(name="skip")
     async def skip_quiz(self, ctx):
+        """Skip the current quiz and reveal the answer"""
         if ctx.author.id in self.current_quiz:
             primary = self.current_quiz[ctx.author.id]["primary"]
             del self.current_quiz[ctx.author.id]

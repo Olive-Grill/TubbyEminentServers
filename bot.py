@@ -50,6 +50,7 @@ async def on_ready():
 # Restart command only for OWNER_ID
 @bot.command(name="restart")
 async def restart_bot(ctx):
+    """Restart the bot (owner only)"""
     if ctx.author.id != OWNER_ID:
         await ctx.send("❌ You don't have permission to restart me.")
         return
