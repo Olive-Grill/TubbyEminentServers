@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Crab Nebula",
+    "aliases": ["M1", "Messier 1", "NGC 1952"],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Crab_Nebula.jpg/1280px-Crab_Nebula.jpg",
+      "https://cdn.eso.org/images/screen/potw1523a.jpg"
+    ]
+  },
+  {
+    "name": "Orion Nebula",
+    "aliases": ["M42", "Messier 42", "NGC 1976"],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg/1280px-Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg",
+      "https://c02.purpledshub.com/uploads/sites/48/2019/06/19_WilliamBrown_OrionNebula-d81953f.jpg?webp=1&w=1200"
+    ]
+  }
+]
