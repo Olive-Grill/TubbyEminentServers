@@ -1,20 +1,178 @@
 [
   {
-    "name": "Crab Nebula",
-    "aliases": ["M1", "Messier 1", "NGC 1952"],
+    "name": "HD 95086",
+    "aliases": ["HD 95086 b"],
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Crab_Nebula.jpg/1280px-Crab_Nebula.jpg",
-      "https://cdn.eso.org/images/screen/potw1523a.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/0/08/VLT_image_of_exoplanet_HD_95086_b.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/03/HD_95086_JWST_MIRI.jpg"
     ],
-    "division": "B"
+    "division": "B",
+    "hint": "Young star with a directly imaged exoplanet."
   },
   {
-    "name": "Orion Nebula",
-    "aliases": ["M42", "Messier 42", "NGC 1976"],
+    "name": "NGC 3324",
+    "aliases": ["Gabriela Mistral Nebula"],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/The_star_formation_region_NGC_3324.jpg/1280px-The_star_formation_region_NGC_3324.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/NGC_3324_Hubble.jpg/2880px-NGC_3324_Hubble.jpg"
+    ],
+    "division": "B",
+    "hint": "Bright star-forming nebula in Carina."
+  },
+  {
+    "name": "30 Doradus",
+    "aliases": ["Tarantula Nebula"],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Tarantula_Nebula_by_JWST.jpg/2560px-Tarantula_Nebula_by_JWST.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/30_Doradus%2C_Tarantula_Nebula.jpg/1920px-30_Doradus%2C_Tarantula_Nebula.jpg"
+    ],
+    "division": "B",
+    "hint": "Most active starburst region in the Local Group."
+  },
+  {
+    "name": "HD 141569",
+    "aliases": ["HD 141569 A"],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/94/HD_141569_Hubble_WikiSky.jpg",
+      "https://d2pn8kiwq2w21t.cloudfront.net/images/jpegPIA21090.width-1024.jpg"
+    ],
+    "division": "B",
+    "hint": "Young star with a complex circumstellar disk."
+  },
+  {
+    "name": "HD 100546",
+    "aliases": ["KR Mus", "KR Muscae"],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/52/View_of_the_dust_disc_around_the_young_star_HD_100546.jpg"
+    ],
+    "division": "B",
+    "hint": "Star with a prominent protoplanetary disk."
+  },
+  {
+    "name": "Barnard 68",
+    "aliases": ["LDN 57"],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Barnard_68.jpg/1280px-Barnard_68.jpg",
+      "https://sci.esa.int/documents/33580/35361/1567215005914-ESA_Gaia_DR2_Barnard68_flux_colour_625.jpg"
+    ],
+    "division": "B",
+    "hint": "Dark molecular cloud blocking background stars."
+  },
+  {
+    "name": "FU Orionis",
+    "aliases": ["FU Ori"],
+    "images": [
+      "https://i.ibb.co/Psg7Vj7p/2560px-Barnard-35-Spitzer.png"
+    ],
+    "division": "B",
+    "hint": "Prototype of young eruptive variable stars."
+  },
+  {
+    "name": "HOPS 383",
+    "aliases": [],
+    "images": [
+      "https://chandra.harvard.edu/photo/2020/hops383/hops383_illus.jpg",
+      "https://chandra.harvard.edu/photo/2020/hops383/hops383_dss2.jpg"
+    ],
+    "division": "B",
+    "hint": "A young protostar caught during a big outburst."
+  },
+  {
+    "name": "Messier 42",
+    "aliases": ["Orion Nebula", "M42", "NGC 1976"],
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg/1280px-Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg",
-      "https://c02.purpledshub.com/uploads/sites/48/2019/06/19_WilliamBrown_OrionNebula-d81953f.jpg?webp=1&w=1200"
+      "https://www.messier-objects.com/wp-content/uploads/2015/05/Orion-Nebula.jpeg"
     ],
-    "division": "B"
+    "division": "B",
+    "hint": "One of the brightest and closest star-forming nebulae."
+  },
+  {
+    "name": "Stephan's Quintet",
+    "aliases": [],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Stephan%27s_Quintet_Hubble_2009.full_denoise.jpg/1280px-Stephan%27s_Quintet_Hubble_2009.full_denoise.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/15/Stephan%27s_Quintet_X-ray_%2B_Optical.jpg"
+    ],
+    "division": "B",
+    "hint": "Famous compact group of interacting galaxies."
+  },
+  {
+    "name": "NGC 1333",
+    "aliases": [],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Peeking_into_Perseus_%28wide_field_view%29_%28potm2408b%29.jpg/1920px-Peeking_into_Perseus_%28wide_field_view%29_%28potm2408b%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/61/N1333s.jpg"
+    ],
+    "division": "B",
+    "hint": "Active star-forming region in the Perseus molecular cloud."
+  },
+  {
+    "name": "Baby Boom Galaxy",
+    "aliases": [],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/9f/Ssc2008-12a_small.jpg"
+    ],
+    "division": "B",
+    "hint": "One of the most starburst-intensive galaxies known."
+  },
+  {
+    "name": "HL Tauri",
+    "aliases": ["HL Tau"],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/HL_Tau_protoplanetary_disk.jpg/1280px-HL_Tau_protoplanetary_disk.jpg",
+      "https://www.almaobservatory.org/wp-content/uploads/2017/10/141105_ALMA_HL_02.jpg"
+    ],
+    "division": "B",
+    "hint": "Young star with a beautifully detailed protoplanetary disk."
+  },
+  {
+    "name": "L1527",
+    "aliases": [],
+    "images": [
+      "https://cdn.esawebb.org/archives/images/screen/weic2219a.jpg",
+      "https://cdn.esawebb.org/archives/images/screen/L1527-1.jpg"
+    ],
+    "division": "B",
+    "hint": "Protostellar system with a thick envelope and disk."
+  },
+  {
+    "name": "NGC 1555",
+    "aliases": ["Hind's Variable Nebula", "Sh2-238", "HH 155"],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/04/N1555s.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/76/Ngc1555.jpg"
+    ],
+    "division": "B",
+    "hint": "Reflection nebula linked to a young variable star."
+  },
+  {
+    "name": "HH 46/47",
+    "aliases": ["Herbig-Haro 46/47"],
+    "images": [
+      "https://stsci-opo.org/STScI-01H5308GYAN46P3HX4PQ20HP31.png",
+      "https://upload.wikimedia.org/wikipedia/commons/2/29/HH47_jet.jpg"
+    ],
+    "division": "B",
+    "hint": "Jet from a young star forming Herbig-Haro objects."
+  },
+  {
+    "name": "RCW 38",
+    "aliases": ["Gum 22", "Gum 23", "Gum 24"],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Star_cluster_RCW_38.jpg/1280px-Star_cluster_RCW_38.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nebula_around_star_cluster_RCW_38.jpg/1280px-Nebula_around_star_cluster_RCW_38.jpg"
+    ],
+    "division": "B",
+    "hint": "Dense star cluster with surrounding glowing gas."
+  },
+  {
+    "name": "J122051+491255",
+    "aliases": ["Green Pea Galaxy"],
+    "images": [
+      "https://i.ibb.co/d0hWPCG8/nasas-webb-telescope-r-1.png"
+    ],
+    "division": "B",
+    "hint": "Compact greenish galaxy known for intense star formation."
   }
 ]

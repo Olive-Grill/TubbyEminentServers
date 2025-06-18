@@ -5,7 +5,9 @@ import difflib
 import json
 import os
 
+
 class IDCommands(commands.Cog):
+
     def __init__(self, bot):
         self.bot = bot
         self.dso_data = self.load_dso_data()
@@ -26,9 +28,8 @@ class IDCommands(commands.Cog):
     def is_close_enough(self, user_answer, valid_answers, threshold=0.7):
         user_answer = user_answer.lower()
         return any(
-            difflib.SequenceMatcher(None, user_answer, ans.lower()).ratio() >= threshold
-            for ans in valid_answers
-        )
+            difflib.SequenceMatcher(None, user_answer, ans.lower()).ratio() >=
+            threshold for ans in valid_answers)
 
     async def send_quiz_image(self, ctx, user_id):
         quiz = self.current_quiz.get(user_id)
@@ -47,13 +48,12 @@ class IDCommands(commands.Cog):
         mode = quiz.get("mode", "a")
         footer_text = f'Reply with "{mode}.[your guess]", "{mode}.pic" for another view, or "{mode}.skip".'
 
-        embed = discord.Embed(
-            title="🔭 Identify this Deep Space Object!",
-            color=discord.Color.dark_blue()
-        )
+        embed = discord.Embed(title="🔭 Identify this Deep Space Object!",
+                              color=discord.Color.dark_blue())
         embed.set_image(url=image_url)
         embed.set_footer(text=footer_text)
-        print(f"[send_quiz_image] Sending image to user {user_id}: {image_url}")  # Debug
+        print(f"[send_quiz_image] Sending image to user {user_id}: {image_url}"
+              )  # Debug
         await ctx.send(embed=embed)
 
     async def start_quiz(self, ctx, mode: str = "a"):
@@ -62,16 +62,23 @@ class IDCommands(commands.Cog):
             await ctx.send(
                 f"❗ You already have an active quiz. Use `{active_mode}.skip` to skip or `{active_mode}.pic` for another image."
             )
-            print(f"[start_quiz] User {ctx.author.id} tried to start a quiz but already has one active.")
+            print(
+                f"[start_quiz] User {ctx.author.id} tried to start a quiz but already has one active."
+            )
             return
 
         if ctx.channel.id in self.channel_active_quiz:
-            await ctx.send("❗ Someone else is already quizzing in this channel.")
-            print(f"[start_quiz] Channel {ctx.channel.id} already has active quiz.")
+            await ctx.send(
+                "❗ Someone else is already quizzing in this channel.")
+            print(
+                f"[start_quiz] Channel {ctx.channel.id} already has active quiz."
+            )
             return
 
         if mode == "b":
-            filtered_data = [d for d in self.dso_data if d.get("division") == "B"]
+            filtered_data = [
+                d for d in self.dso_data if d.get("division") == "B"
+            ]
         else:
             filtered_data = self.dso_data
 
@@ -93,24 +100,27 @@ class IDCommands(commands.Cog):
         }
         self.channel_active_quiz.add(ctx.channel.id)
 
-        print(f"[start_quiz] Started quiz for user {ctx.author.id} in channel {ctx.channel.id}, mode {mode}")
+        print(
+            f"[start_quiz] Started quiz for user {ctx.author.id} in channel {ctx.channel.id}, mode {mode}"
+        )
         await self.send_quiz_image(ctx, ctx.author.id)
 
     @commands.command(name="a")
     async def quiz_a(self, ctx):
-        """Start a deep space object identification quiz (division C)"""
+        """Start a deep space object identification quiz (division B/C)"""
         await self.start_quiz(ctx, mode="a")
 
     @commands.command(name="b")
     async def quiz_b(self, ctx):
-        """Start a deep space object identification quiz (division B)"""
+        """coming soon"""
         await self.start_quiz(ctx, mode="b")
 
     @commands.command(name="pic")
     async def another_pic(self, ctx):
         """Get another image for your current quiz"""
         if ctx.author.id not in self.current_quiz:
-            await ctx.send("You don't have an active quiz. Use `a` or `b` to start one.")
+            await ctx.send(
+                "You don't have an active quiz. Use `a` or `b` to start one.")
             return
         print(f"[another_pic] Sending another pic for user {ctx.author.id}")
         await self.send_quiz_image(ctx, ctx.author.id)
@@ -123,9 +133,11 @@ class IDCommands(commands.Cog):
             del self.current_quiz[ctx.author.id]
             self.channel_active_quiz.discard(ctx.channel.id)
             print(f"[skip_quiz] User {ctx.author.id} skipped the quiz.")
-            await ctx.send(f"⏭️ Skipped! The correct answer was **{primary}**.")
+            await ctx.send(f"⏭️ Skipped! The correct answer was **{primary}**."
+                           )
         else:
-            await ctx.send("You don't have an active quiz! Use `a` or `b` to start.")
+            await ctx.send(
+                "You don't have an active quiz! Use `a` or `b` to start.")
 
     @commands.Cog.listener()
     async def on_message(self, message):
@@ -144,29 +156,42 @@ class IDCommands(commands.Cog):
                 quiz = self.current_quiz.get(message.author.id)
 
                 if not quiz or quiz.get("mode") != prefix[0]:
-                    print(f"[on_message] No active quiz or mode mismatch for user {message.author.id}")
+                    print(
+                        f"[on_message] No active quiz or mode mismatch for user {message.author.id}"
+                    )
                     return
 
                 primary_name = quiz["primary"]
                 valid_names = quiz["names"]
 
                 if guess == "skip":
-                    print(f"[on_message] User {message.author.id} skipped the quiz.")
-                    await message.channel.send(f"⏭️ Skipped! The correct answer was **{primary_name}**.")
+                    print(
+                        f"[on_message] User {message.author.id} skipped the quiz."
+                    )
+                    await message.channel.send(
+                        f"⏭️ Skipped! The correct answer was **{primary_name}**."
+                    )
                     del self.current_quiz[message.author.id]
                     self.channel_active_quiz.discard(message.channel.id)
                     return
 
                 if self.is_close_enough(guess, valid_names):
-                    print(f"[on_message] User {message.author.id} answered correctly.")
-                    await message.channel.send(f"✅ Correct! It's **{primary_name}**.")
+                    print(
+                        f"[on_message] User {message.author.id} answered correctly."
+                    )
+                    await message.channel.send(
+                        f"✅ Correct! It's **{primary_name}**.")
                     del self.current_quiz[message.author.id]
                     self.channel_active_quiz.discard(message.channel.id)
                 else:
                     if len(guess) > 2:
-                        print(f"[on_message] User {message.author.id} answered incorrectly.")
-                        await message.channel.send(random.choice(self.funny_insults))
+                        print(
+                            f"[on_message] User {message.author.id} answered incorrectly."
+                        )
+                        await message.channel.send(
+                            random.choice(self.funny_insults))
                 return
+
 
 async def setup(bot):
     await bot.add_cog(IDCommands(bot))
