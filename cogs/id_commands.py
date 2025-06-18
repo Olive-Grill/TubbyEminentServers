@@ -139,6 +139,31 @@ class IDCommands(commands.Cog):
             await ctx.send(
                 "You don't have an active quiz! Use `a` or `b` to start.")
 
+    @commands.command(name="hint")
+    async def get_hint(self, ctx):
+        """Get a hint for your current quiz"""
+        if ctx.author.id not in self.current_quiz:
+            await ctx.send(
+                "You don't have an active quiz. Use `a` or `b` to start one.")
+            return
+        
+        quiz = self.current_quiz[ctx.author.id]
+        primary_name = quiz["primary"]
+        
+        # Find the hint for this object
+        hint = None
+        for dso in self.dso_data:
+            if dso["name"] == primary_name:
+                hint = dso.get("hint", "No hint available for this object.")
+                break
+        
+        if hint:
+            await ctx.send(f"💡 **Hint:** {hint}")
+        else:
+            await ctx.send("💡 No hint available for this object.")
+        
+        print(f"[get_hint] User {ctx.author.id} requested hint for {primary_name}")
+
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author.bot:
