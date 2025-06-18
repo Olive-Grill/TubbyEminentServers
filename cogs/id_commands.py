@@ -60,7 +60,7 @@ class IDCommands(commands.Cog):
         if ctx.author.id in self.current_quiz:
             active_mode = self.current_quiz[ctx.author.id].get("mode", mode)
             await ctx.send(
-                f"❗ You already have an active quiz. Use `{active_mode}.skip` to skip or `{active_mode}.pic` for another image."
+                f"{ctx.author.mention} ❗ You already have an active quiz. Use `{active_mode}.skip` to skip or `{active_mode}.pic` for another image."
             )
             print(
                 f"[start_quiz] User {ctx.author.id} tried to start a quiz but already has one active."
@@ -69,7 +69,7 @@ class IDCommands(commands.Cog):
 
         if ctx.channel.id in self.channel_active_quiz:
             await ctx.send(
-                "❗ Someone else is already quizzing in this channel.")
+                f"{ctx.author.mention} ❗ Someone else is already quizzing in this channel.")
             print(
                 f"[start_quiz] Channel {ctx.channel.id} already has active quiz."
             )
@@ -120,7 +120,7 @@ class IDCommands(commands.Cog):
         """Get another image for your current quiz"""
         if ctx.author.id not in self.current_quiz:
             await ctx.send(
-                "You don't have an active quiz. Use `a` or `b` to start one.")
+                f"{ctx.author.mention} You don't have an active quiz. Use `a` or `b` to start one.")
             return
         print(f"[another_pic] Sending another pic for user {ctx.author.id}")
         await self.send_quiz_image(ctx, ctx.author.id)
@@ -133,18 +133,18 @@ class IDCommands(commands.Cog):
             del self.current_quiz[ctx.author.id]
             self.channel_active_quiz.discard(ctx.channel.id)
             print(f"[skip_quiz] User {ctx.author.id} skipped the quiz.")
-            await ctx.send(f"⏭️ Skipped! The correct answer was **{primary}**."
+            await ctx.send(f"{ctx.author.mention} ⏭️ Skipped! The correct answer was **{primary}**."
                            )
         else:
             await ctx.send(
-                "You don't have an active quiz! Use `a` or `b` to start.")
+                f"{ctx.author.mention} You don't have an active quiz! Use `a` or `b` to start.")
 
     @commands.command(name="hint")
     async def get_hint(self, ctx):
         """Get a hint for your current quiz"""
         if ctx.author.id not in self.current_quiz:
             await ctx.send(
-                "You don't have an active quiz. Use `a` or `b` to start one.")
+                f"{ctx.author.mention} You don't have an active quiz. Use `a` or `b` to start one.")
             return
         
         quiz = self.current_quiz[ctx.author.id]
@@ -158,9 +158,9 @@ class IDCommands(commands.Cog):
                 break
         
         if hint:
-            await ctx.send(f"💡 **Hint:** {hint}")
+            await ctx.send(f"{ctx.author.mention} 💡 **Hint:** {hint}")
         else:
-            await ctx.send("💡 No hint available for this object.")
+            await ctx.send(f"{ctx.author.mention} 💡 No hint available for this object.")
         
         print(f"[get_hint] User {ctx.author.id} requested hint for {primary_name}")
 
@@ -194,7 +194,7 @@ class IDCommands(commands.Cog):
                         f"[on_message] User {message.author.id} skipped the quiz."
                     )
                     await message.channel.send(
-                        f"⏭️ Skipped! The correct answer was **{primary_name}**."
+                        f"{message.author.mention} ⏭️ Skipped! The correct answer was **{primary_name}**."
                     )
                     del self.current_quiz[message.author.id]
                     self.channel_active_quiz.discard(message.channel.id)
@@ -205,7 +205,7 @@ class IDCommands(commands.Cog):
                         f"[on_message] User {message.author.id} answered correctly."
                     )
                     await message.channel.send(
-                        f"✅ Correct! It's **{primary_name}**.")
+                        f"{message.author.mention} ✅ Correct! It's **{primary_name}**.")
                     del self.current_quiz[message.author.id]
                     self.channel_active_quiz.discard(message.channel.id)
                 else:
@@ -213,12 +213,12 @@ class IDCommands(commands.Cog):
                         print(
                             f"[on_message] User {message.author.id} answered incorrectly."
                         )
-                        incorrect_response = random.choice([
-                            "❌ Incorrect! Try again.",
-                            "❌ That's not right. Keep guessing!",
-                            "❌ Nope, try another guess.",
-                            *self.funny_insults
-                        ])
+                        incorrect_responses = [
+                            f"{message.author.mention} ❌ Incorrect! Try again.",
+                            f"{message.author.mention} ❌ That's not right. Keep guessing!",
+                            f"{message.author.mention} ❌ Nope, try another guess."
+                        ]
+                        incorrect_response = random.choice(incorrect_responses + [f"{message.author.mention} " + insult for insult in self.funny_insults])
                         await message.channel.send(incorrect_response)
                 return
 
