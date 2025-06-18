@@ -204,8 +204,23 @@ class IDCommands(commands.Cog):
                     print(
                         f"[on_message] User {message.author.id} answered correctly."
                     )
-                    await message.channel.send(
-                        f"✅ Correct! It's **{primary_name}**. {message.author.mention}")
+                    
+                    # Find all aliases for this object
+                    all_names = [primary_name]
+                    for dso in self.dso_data:
+                        if dso["name"] == primary_name:
+                            all_names.extend(dso.get("aliases", []))
+                            break
+                    
+                    # Format the response with all names
+                    if len(all_names) > 1:
+                        names_display = " / ".join(all_names)
+                        await message.channel.send(
+                            f"✅ Correct! It's **{names_display}**. {message.author.mention}")
+                    else:
+                        await message.channel.send(
+                            f"✅ Correct! It's **{primary_name}**. {message.author.mention}")
+                    
                     del self.current_quiz[message.author.id]
                     self.channel_active_quiz.discard(message.channel.id)
                 else:
