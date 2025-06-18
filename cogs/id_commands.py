@@ -213,12 +213,21 @@ class IDCommands(commands.Cog):
                         print(
                             f"[on_message] User {message.author.id} answered incorrectly."
                         )
-                        incorrect_responses = [
+                        # Common responses (high probability)
+                        common_responses = [
                             f"❌ Incorrect! Try again. {message.author.mention}",
                             f"❌ That's not right. Keep guessing! {message.author.mention}",
-                            f"❌ Nope, try another guess. {message.author.mention}"
+                            f"❌ Nope, try another guess. {message.author.mention}",
+                            f"❌ ok bugbo 🥀 {message.author.mention}",
+                            f"❌ Incorrect! {message.author.mention}"
                         ]
-                        incorrect_response = random.choice(incorrect_responses + [insult + f" {message.author.mention}" for insult in self.funny_insults])
+                        
+                        # Rare insult (very low probability - about 2% chance)
+                        if random.random() < 0.02:
+                            incorrect_response = f"❌ If ignorance is bliss, you must be the happiest person alive. {message.author.mention}"
+                        else:
+                            incorrect_response = random.choice(common_responses)
+                        
                         await message.channel.send(incorrect_response)
                 return
 
