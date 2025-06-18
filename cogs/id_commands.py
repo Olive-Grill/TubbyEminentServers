@@ -46,7 +46,7 @@ class IDCommands(commands.Cog):
         self.current_quiz[user_id]["index"] += 1
 
         mode = quiz.get("mode", "a")
-        footer_text = f'Reply with "{mode}.[your guess]", "{mode}.pic" for another view, or "{mode}.skip".'
+        footer_text = f'Reply with "{mode}.[your guess]", "{mode}.pic" for another view, "{mode}.skip" to skip, or "{mode}.hint" for a hint.'
 
         embed = discord.Embed(title="🔭 Identify this Deep Space Object!",
                               color=discord.Color.dark_blue())
