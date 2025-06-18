@@ -213,8 +213,13 @@ class IDCommands(commands.Cog):
                         print(
                             f"[on_message] User {message.author.id} answered incorrectly."
                         )
-                        await message.channel.send(
-                            random.choice(self.funny_insults))
+                        incorrect_response = random.choice([
+                            "❌ Incorrect! Try again.",
+                            "❌ That's not right. Keep guessing!",
+                            "❌ Nope, try another guess.",
+                            *self.funny_insults
+                        ])
+                        await message.channel.send(incorrect_response)
                 return
 
 
