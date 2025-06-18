@@ -11,13 +11,104 @@ import sys
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-# Flask app to keep Replit alive
+# Flask app to keep Replit alive and provide web interface
 app = Flask('')
 
 
 @app.route('/')
 def home():
-    return "I'm alive!"
+    return '''
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Astrobo - Discord Bot</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #2c2f33;
+                color: #ffffff;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .feature {
+                background-color: #36393f;
+                padding: 20px;
+                margin: 15px 0;
+                border-radius: 8px;
+                border-left: 4px solid #7289da;
+            }
+            .command {
+                background-color: #23272a;
+                padding: 10px;
+                border-radius: 4px;
+                font-family: monospace;
+                margin: 10px 0;
+            }
+            .status {
+                display: inline-block;
+                padding: 5px 10px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            .online {
+                background-color: #43b581;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>🌠 Astrobo Discord Bot</h1>
+            <p>Deep Space Object Identification Quiz Bot</p>
+            <span class="status online">● ONLINE</span>
+        </div>
+        
+        <div class="feature">
+            <h3>🔭 Deep Space Object Quiz</h3>
+            <p>Test your knowledge of deep space objects with interactive quizzes!</p>
+            <div class="command">a.a - Start Division B/C quiz</div>
+            <div class="command">a.b - Division B only (coming soon)</div>
+            <div class="command">a.pic - Get another image</div>
+            <div class="command">a.skip - Skip current question</div>
+            <div class="command">a.hint - Get a hint</div>
+        </div>
+        
+        <div class="feature">
+            <h3>🎯 How to Play</h3>
+            <p>1. Use <code>a.a</code> to start a quiz</p>
+            <p>2. Look at the deep space object image</p>
+            <p>3. Reply with <code>a.[your guess]</code></p>
+            <p>4. Get feedback and try again or move to the next object!</p>
+        </div>
+        
+        <div class="feature">
+            <h3>📊 Features</h3>
+            <ul>
+                <li>Interactive deep space object identification</li>
+                <li>Multiple images per object</li>
+                <li>Fuzzy matching for answers</li>
+                <li>Hints available for each object</li>
+                <li>Channel-based quiz management</li>
+            </ul>
+        </div>
+        
+        <div class="feature">
+            <h3>🔗 Invite Bot</h3>
+            <p>Contact the bot owner to add Astrobo to your Discord server!</p>
+        </div>
+        
+        <footer style="text-align: center; margin-top: 30px; opacity: 0.7;">
+            <p>Watching the stars 🌠✨</p>
+        </footer>
+    </body>
+    </html>
+    '''
 
 
 def run():
