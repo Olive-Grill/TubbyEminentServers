@@ -11,9 +11,8 @@ class IDCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.dso_data = self.load_dso_data()
-        self.current_quiz = {}  # user_id: {names, images, index, mode}
-        self.channel_active_quiz = set()
-
+        self.current_quiz = {
+        }  # channel_id: {names, images, index, mode, primary, hint_stage}
         self.funny_insults = [
             "❌ ok bugbo 🥀",
             "❌ If ignorance is bliss, you must be the happiest person alive.",
@@ -31,8 +30,8 @@ class IDCommands(commands.Cog):
             difflib.SequenceMatcher(None, user_answer, ans.lower()).ratio() >=
             threshold for ans in valid_answers)
 
-    async def send_quiz_image(self, ctx, user_id):
-        quiz = self.current_quiz.get(user_id)
+    async def send_quiz_image(self, ctx, channel_id):
+        quiz = self.current_quiz.get(channel_id)
         if not quiz:
             return
 
@@ -43,35 +42,29 @@ class IDCommands(commands.Cog):
 
         index = quiz["index"] % len(images)
         image_url = images[index]
-        self.current_quiz[user_id]["index"] += 1
+        self.current_quiz[channel_id]["index"] += 1
 
         mode = quiz.get("mode", "a")
-        footer_text = f'Reply with "{mode}.[your guess]", "{mode}.pic" for another view, "{mode}.skip" to skip, or "{mode}.hint" for a hint.'
+        footer_text = (
+            f'Reply with "{mode}.[your guess]", "{mode}.pic" for another view, '
+            f'"{mode}.skip" to skip, or "{mode}.hint" for up to 2 hints.')
 
         embed = discord.Embed(title="🔭 Identify this Deep Space Object!",
                               color=discord.Color.dark_blue())
         embed.set_image(url=image_url)
         embed.set_footer(text=footer_text)
-        print(f"[send_quiz_image] Sending image to user {user_id}: {image_url}"
-              )  # Debug
+        print(
+            f"[send_quiz_image] Sending image to channel {channel_id}: {image_url}"
+        )
         await ctx.send(embed=embed)
 
     async def start_quiz(self, ctx, mode: str = "a"):
-        if ctx.author.id in self.current_quiz:
-            active_mode = self.current_quiz[ctx.author.id].get("mode", mode)
+        if ctx.channel.id in self.current_quiz:
             await ctx.send(
-                f"You already have an active quiz. Use `{active_mode}.skip` to skip or `{active_mode}.pic` for another image. {ctx.author.mention}"
+                "❗ There's already an active quiz in this channel. Use `.skip` to skip or `.pic` for another image."
             )
             print(
-                f"[start_quiz] User {ctx.author.id} tried to start a quiz but already has one active."
-            )
-            return
-
-        if ctx.channel.id in self.channel_active_quiz:
-            await ctx.send(
-                f"Someone else is already quizzing in this channel. {ctx.author.mention}")
-            print(
-                f"[start_quiz] Channel {ctx.channel.id} already has active quiz."
+                f"[start_quiz] Channel {ctx.channel.id} already has an active quiz."
             )
             return
 
@@ -91,19 +84,19 @@ class IDCommands(commands.Cog):
         names = [dso["name"]] + dso.get("aliases", [])
         names = [name.lower() for name in names]
 
-        self.current_quiz[ctx.author.id] = {
+        self.current_quiz[ctx.channel.id] = {
             "names": names,
             "images": dso["images"],
             "index": 0,
             "primary": dso["name"],
-            "mode": mode
+            "mode": mode,
+            "hint_stage": 0  # init hint stage here
         }
-        self.channel_active_quiz.add(ctx.channel.id)
 
         print(
-            f"[start_quiz] Started quiz for user {ctx.author.id} in channel {ctx.channel.id}, mode {mode}"
+            f"[start_quiz] Started quiz in channel {ctx.channel.id}, mode {mode}"
         )
-        await self.send_quiz_image(ctx, ctx.author.id)
+        await self.send_quiz_image(ctx, ctx.channel.id)
 
     @commands.command(name="a")
     async def quiz_a(self, ctx):
@@ -112,57 +105,59 @@ class IDCommands(commands.Cog):
 
     @commands.command(name="b")
     async def quiz_b(self, ctx):
-        """coming soon"""
+        """Start a DSO quiz limited to Division B objects"""
         await self.start_quiz(ctx, mode="b")
 
     @commands.command(name="pic")
     async def another_pic(self, ctx):
         """Get another image for your current quiz"""
-        if ctx.author.id not in self.current_quiz:
-            await ctx.send(
-                f"You don't have an active quiz. Use `a` or `b` to start one. {ctx.author.mention}")
+        if ctx.channel.id not in self.current_quiz:
+            await ctx.send("No active quiz. Use `.a` or `.b` to start one.")
             return
-        print(f"[another_pic] Sending another pic for user {ctx.author.id}")
-        await self.send_quiz_image(ctx, ctx.author.id)
+        print(f"[another_pic] Sending another pic in channel {ctx.channel.id}")
+        await self.send_quiz_image(ctx, ctx.channel.id)
 
     @commands.command(name="skip")
     async def skip_quiz(self, ctx):
         """Skip the current quiz and reveal the answer"""
-        if ctx.author.id in self.current_quiz:
-            primary = self.current_quiz[ctx.author.id]["primary"]
-            del self.current_quiz[ctx.author.id]
-            self.channel_active_quiz.discard(ctx.channel.id)
-            print(f"[skip_quiz] User {ctx.author.id} skipped the quiz.")
-            await ctx.send(f"⏭️ Skipped! The correct answer was **{primary}**. {ctx.author.mention}"
+        if ctx.channel.id in self.current_quiz:
+            primary = self.current_quiz[ctx.channel.id]["primary"]
+            del self.current_quiz[ctx.channel.id]
+            print(f"[skip_quiz] Quiz skipped in channel {ctx.channel.id}.")
+            await ctx.send(f"⏭️ Skipped! The correct answer was **{primary}**."
                            )
         else:
-            await ctx.send(
-                f"You don't have an active quiz! Use `a` or `b` to start. {ctx.author.mention}")
+            await ctx.send("No active quiz to skip. Use `.a` or `.b` to start."
+                           )
 
     @commands.command(name="hint")
-    async def get_hint(self, ctx):
-        """Get a hint for your current quiz"""
-        if ctx.author.id not in self.current_quiz:
+    async def show_hint(self, ctx):
+        """Show a hint for the current DSO quiz with 2-step hints"""
+        quiz = self.current_quiz.get(ctx.channel.id)
+        if not quiz:
             await ctx.send(
-                f"You don't have an active quiz. Use `a` or `b` to start one. {ctx.author.mention}")
+                "No active quiz right now. Start one with `.a` or `.b`!")
             return
 
-        quiz = self.current_quiz[ctx.author.id]
+        hint_stage = quiz.get("hint_stage", 0)
         primary_name = quiz["primary"]
+        dso_entry = next(
+            (d for d in self.dso_data if d["name"] == primary_name), None)
 
-        # Find the hint for this object
-        hint = None
-        for dso in self.dso_data:
-            if dso["name"] == primary_name:
-                hint = dso.get("hint", "No hint available for this object.")
-                break
-
-        if hint:
-            await ctx.send(f"💡 **Hint:** {hint} {ctx.author.mention}")
+        if hint_stage == 0:
+            # First hint: first 3 letters + mask rest
+            first_three = primary_name[:3]
+            masked_hint = first_three + "###"
+            await ctx.send(
+                f"💡 HINT #1: The first three letters are **{masked_hint}**")
+            quiz["hint_stage"] = 1
         else:
-            await ctx.send(f"💡 No hint available for this object. {ctx.author.mention}")
-
-        print(f"[get_hint] User {ctx.author.id} requested hint for {primary_name}")
+            # Second or further hints: full hint if available
+            if dso_entry and "hint" in dso_entry:
+                await ctx.send(f"💡 HINT #2: {dso_entry['hint']}")
+            else:
+                await ctx.send("No further hints available for this object.")
+            quiz["hint_stage"] = 2
 
     @commands.Cog.listener()
     async def on_message(self, message):
@@ -171,18 +166,17 @@ class IDCommands(commands.Cog):
 
         ctx = await self.bot.get_context(message)
         if ctx.command is not None:
-            # Let commands be processed normally and exit early
             return
 
         content = message.content.strip().lower()
         for prefix in ["a.", "b."]:
             if content.startswith(prefix):
                 guess = content[len(prefix):].strip()
-                quiz = self.current_quiz.get(message.author.id)
+                quiz = self.current_quiz.get(message.channel.id)
 
                 if not quiz or quiz.get("mode") != prefix[0]:
                     print(
-                        f"[on_message] No active quiz or mode mismatch for user {message.author.id}"
+                        f"[on_message] No active quiz or mode mismatch in channel {message.channel.id}"
                     )
                     return
 
@@ -191,59 +185,28 @@ class IDCommands(commands.Cog):
 
                 if guess == "skip":
                     print(
-                        f"[on_message] User {message.author.id} skipped the quiz."
+                        f"[on_message] Quiz skipped in channel {message.channel.id}"
                     )
                     await message.channel.send(
-                        f"⏭️ Skipped! The correct answer was **{primary_name}**. {message.author.mention}"
+                        f"⏭️ Skipped! The correct answer was **{primary_name}**."
                     )
-                    del self.current_quiz[message.author.id]
-                    self.channel_active_quiz.discard(message.channel.id)
+                    del self.current_quiz[message.channel.id]
                     return
 
                 if self.is_close_enough(guess, valid_names):
                     print(
-                        f"[on_message] User {message.author.id} answered correctly."
+                        f"[on_message] Correct answer in channel {message.channel.id} by {message.author.id}"
                     )
-                    
-                    # Find all aliases for this object
-                    all_names = [primary_name]
-                    for dso in self.dso_data:
-                        if dso["name"] == primary_name:
-                            all_names.extend(dso.get("aliases", []))
-                            break
-                    
-                    # Format the response with all names
-                    if len(all_names) > 1:
-                        names_display = " / ".join(all_names)
-                        await message.channel.send(
-                            f"✅ Correct! It's **{names_display}**. {message.author.mention}")
-                    else:
-                        await message.channel.send(
-                            f"✅ Correct! It's **{primary_name}**. {message.author.mention}")
-                    
-                    del self.current_quiz[message.author.id]
-                    self.channel_active_quiz.discard(message.channel.id)
+                    await message.channel.send(
+                        f"✅ Correct! It's **{primary_name}**.")
+                    del self.current_quiz[message.channel.id]
                 else:
                     if len(guess) > 2:
                         print(
-                            f"[on_message] User {message.author.id} answered incorrectly."
+                            f"[on_message] Incorrect guess in channel {message.channel.id} by {message.author.id}"
                         )
-                        # Common responses (high probability)
-                        common_responses = [
-                            f"❌ Incorrect! Try again. {message.author.mention}",
-                            f"❌ That's not right. Keep guessing! {message.author.mention}",
-                            f"❌ Nope, try another guess. {message.author.mention}",
-                            f"❌ ok bugbo 🥀 {message.author.mention}",
-                            f"❌ Incorrect! {message.author.mention}"
-                        ]
-                        
-                        # Rare insult (very low probability - about 2% chance)
-                        if random.random() < 0.02:
-                            incorrect_response = f"❌ If ignorance is bliss, you must be the happiest person alive. {message.author.mention}"
-                        else:
-                            incorrect_response = random.choice(common_responses)
-                        
-                        await message.channel.send(incorrect_response)
+                        await message.channel.send(
+                            random.choice(self.funny_insults))
                 return
 
 
