@@ -114,7 +114,7 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Peeking_into_Perseus_%28wide_field_view%29_%28potm2408b%29.jpg/1920px-Peeking_into_Perseus_%28wide_field_view%29_%28potm2408b%29.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/6/61/N1333s.jpg"
     ],
-    "isnew?": false,
+    "isnew?": true,
     "hint": "Active star-forming region in the Perseus molecular cloud.",
     "wikipedia": "https://en.wikipedia.org/wiki/NGC_1333"
   },
@@ -124,7 +124,7 @@
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/9/9f/Ssc2008-12a_small.jpg"
     ],
-    "isnew?": false,
+    "isnew?": true,
     "hint": "One of the most starburst-intensive galaxies known.",
     "wikipedia": "https://en.wikipedia.org/wiki/Baby_Boom_Galaxy"
   },
@@ -134,8 +134,8 @@
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/HL_Tau_protoplanetary_disk.jpg/1280px-HL_Tau_protoplanetary_disk.jpg",
       "https://www.almaobservatory.org/wp-content/uploads/2017/10/141105_ALMA_HL_02.jpg"
-    ],
-    "isnew?": false,
+    true
+    "isnew?": true,
     "hint": "Young star with a beautifully detailed protoplanetary disk.",
     "wikipedia": "https://en.wikipedia.org/wiki/HL_Tauri"
   },
@@ -146,7 +146,7 @@
       "https://cdn.esawebb.org/archives/images/screen/weic2219a.jpg",
       "https://cdn.esawebb.org/archives/images/screen/L1527-1.jpg"
     ],
-    "isnew?": false,
+    "isnew?": true,
     "hint": "Protostellar system with a thick envelope and disk.",
     "wikipedia": "https://en.wikipedia.org/wiki/L1527"
   },
@@ -157,7 +157,7 @@
       "https://upload.wikimedia.org/wikipedia/commons/0/04/NGC1555.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/7/76/Ngc1555.jpg"
     ],
-    "isnew?": false,
+    "isnew?": true,
     "hint": "Reflection nebula linked to a young variable star.",
     "wikipedia": "https://en.wikipedia.org/wiki/NGC_1555"
   },
@@ -168,7 +168,7 @@
       "https://stsci-opo.org/STScI-01H5308GYAN46P3HX4PQ20HP31.png",
       "https://upload.wikimedia.org/wikipedia/commons/2/29/HH47_jet.jpg"
     ],
-    "isnew?": false,
+    "isnew?": true,
     "hint": "Jet from a young star forming Herbig-Haro objects.",
     "wikipedia": "https://en.wikipedia.org/wiki/HH_46/47"
   },
@@ -179,7 +179,7 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Star_cluster_RCW_38.jpg/1280px-Star_cluster_RCW_38.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nebula_around_star_cluster_RCW_38.jpg/1280px-Nebula_around_star_cluster_RCW_38.jpg"
     ],
-    "isnew?": false,
+    "isnew?": true,
     "hint": "Dense star cluster with surrounding glowing gas.",
     "wikipedia": "https://en.wikipedia.org/wiki/RCW_38"
   },
@@ -189,7 +189,7 @@
     "images": [
       "https://i.ibb.co/d0hWPCG8/nasas-webb-telescope-r-1.png"
     ],
-    "isnew?": false,
+    "isnew?": true,
     "hint": "Compact greenish galaxy known for intense star formation.",
     "wikipedia": "https://en.wikipedia.org/wiki/Green_Pea_galaxies"
   },
@@ -200,7 +200,7 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Messier_87_Hubble_WikiSky.jpg/1280px-Messier_87_Hubble_WikiSky.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Black_hole_-_Messier_87_crop_max_res.jpg/1280px-Black_hole_-_Messier_87_crop_max_res.jpg"
     ],
-    "isnew?": false,
+    "isnew?": true,
     "hint": "Massive elliptical galaxy with a supermassive black hole.",
     "wikipedia": "https://en.wikipedia.org/wiki/Messier_87"
   },
@@ -212,7 +212,7 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/NGC4038_Large_01.jpg/1920px-NGC4038_Large_01.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Antennae_Galaxies_composite_of_ALMA_and_Hubble_observations.jpg/1280px-Antennae_Galaxies_composite_of_ALMA_and_Hubble_observations.jpg"
     ],
-    "isnew?": false,
+    "isnew?": true,
     "hint": "Two colliding galaxies forming the Antennae Galaxies.",
     "wikipedia": "https://en.wikipedia.org/wiki/Antennae_Galaxies"
   },
