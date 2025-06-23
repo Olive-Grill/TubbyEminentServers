@@ -216,12 +216,18 @@ class IDCommands(commands.Cog):
 
         # Nathanielちゃん call-and-response joke 💀
         content = message.content.strip()
-        if content in ("Astroboちゃん!", "Nathanielちゃん!":
-
+        if content in ("Astroboちゃん!", "Nathanielちゃん!"):
             await message.channel.send("はい~!")
             return
         if content == "何が好き?":
             await message.channel.send("チョコミント よりも あ・な・た 💖")
+            return
+
+        # Mustard image response
+        if "mustard" in message.content.lower():
+            embed = discord.Embed(title="ts so tuff 67 🥭")
+            embed.set_image(url="https://preview.redd.it/what-arethe-most-d-rk-and-off-nsive-kendrick-lamar-lyrics-v0-ogu2u7jcfj4d1.jpeg?auto=webp&s=3a0a1519137e8553e267d84834c351eac738443b")
+            await message.channel.send(embed=embed)
             return
 
         ctx = await self.bot.get_context(message)
