@@ -225,8 +225,8 @@ class IDCommands(commands.Cog):
 
         # Mustard image response
         if "mustard" in message.content.lower():
-            embed = discord.Embed(title="")
-            embed.set_image(url="https://i.ytimg.com/vi/eVPp3fJTZvc/maxresdefault.jpg")
+            embed = discord.Embed(title="ts so tuff 67 🥭")
+            embed.set_image(url="https://preview.redd.it/what-arethe-most-d-rk-and-off-nsive-kendrick-lamar-lyrics-v0-ogu2u7jcfj4d1.jpeg?auto=webp&s=3a0a1519137e8553e267d84834c351eac738443b")
             await message.channel.send(embed=embed)
             return
 
