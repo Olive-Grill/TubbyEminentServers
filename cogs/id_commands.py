@@ -245,8 +245,8 @@ class IDCommands(commands.Cog):
             await message.channel.send(embed=embed)
             return
 
-        # 67 image response
-        if "Astrobo" and "sybau" in message.content:
+        # Astrobo sybau response
+        if "Astrobo" in message.content and "sybau" in message.content:
             embed = discord.Embed(title="🥺")
             await message.channel.send(embed=embed)
             return
