@@ -240,13 +240,13 @@ class IDCommands(commands.Cog):
             return
 
         # 67 image response
-        if "67" in message.content:
+        if "67" in message.content.lower():
             embed = discord.Embed(title="67?")
             await message.channel.send(embed=embed)
             return
 
         # Astrobo sybau response
-        if "Astrobo" in message.content and "sybau" in message.content:
+        if "astrobo" in message.content.lower() and "sybau" in message.content.lower():
             embed = discord.Embed(title="🥺")
             await message.channel.send(embed=embed)
             return
