@@ -7,7 +7,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/0/03/HD_95086_JWST_MIRI.jpg"
     ],
     "isnew?": false,
-    "hint": "Young star with a directly imaged exoplanet."
+    "hint": "Young star with a directly imaged exoplanet.",
+    "wikipedia": "https://en.wikipedia.org/wiki/HD_95086"
   },
   {
     "name": "NGC 3324",
@@ -17,7 +18,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/NGC_3324_Hubble.jpg/2880px-NGC_3324_Hubble.jpg"
     ],
     "isnew?": false,
-    "hint": "Bright star-forming nebula in Carina."
+    "hint": "Bright star-forming nebula in Carina.",
+    "wikipedia": "https://en.wikipedia.org/wiki/NGC_3324"
   },
   {
     "name": "30 Doradus",
@@ -27,7 +29,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/30_Doradus%2C_Tarantula_Nebula.jpg/1920px-30_Doradus%2C_Tarantula_Nebula.jpg"
     ],
     "isnew?": false,
-    "hint": "Most active starburst region in the Local Group."
+    "hint": "Most active starburst region in the Local Group.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Tarantula_Nebula"
   },
   {
     "name": "HD 141569",
@@ -37,7 +40,8 @@
       "https://d2pn8kiwq2w21t.cloudfront.net/images/jpegPIA21090.width-1024.jpg"
     ],
     "isnew?": false,
-    "hint": "Young star with a complex circumstellar disk."
+    "hint": "Young star with a complex circumstellar disk.",
+    "wikipedia": "https://en.wikipedia.org/wiki/HD_141569"
   },
   {
     "name": "HD 100546",
@@ -46,7 +50,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/5/52/View_of_the_dust_disc_around_the_young_star_HD_100546.jpg"
     ],
     "isnew?": false,
-    "hint": "Star with a prominent protoplanetary disk."
+    "hint": "Star with a prominent protoplanetary disk.",
+    "wikipedia": "https://en.wikipedia.org/wiki/HD_100546"
   },
   {
     "name": "Barnard 68",
@@ -56,7 +61,8 @@
       "https://sci.esa.int/documents/33580/35361/1567215005914-ESA_Gaia_DR2_Barnard68_flux_colour_625.jpg"
     ],
     "isnew?": false,
-    "hint": "Dark molecular cloud blocking background stars."
+    "hint": "Dark molecular cloud blocking background stars.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Barnard_68"
   },
   {
     "name": "FU Orionis",
@@ -65,7 +71,8 @@
       "https://i.ibb.co/Psg7Vj7p/2560px-Barnard-35-Spitzer.png"
     ],
     "isnew?": false,
-    "hint": "Prototype of young eruptive variable stars."
+    "hint": "Prototype of young eruptive variable stars.",
+    "wikipedia": "https://en.wikipedia.org/wiki/FU_Orionis"
   },
   {
     "name": "HOPS 383",
@@ -75,7 +82,8 @@
       "https://chandra.harvard.edu/photo/2020/hops383/hops383_dss2.jpg"
     ],
     "isnew?": false,
-    "hint": "A young protostar caught during a big outburst."
+    "hint": "A young protostar caught during a big outburst.",
+    "wikipedia": "https://en.wikipedia.org/wiki/HOPS_383"
   },
   {
     "name": "Messier 42",
@@ -85,7 +93,8 @@
       "https://www.messier-objects.com/wp-content/uploads/2015/05/Orion-Nebula.jpeg"
     ],
     "isnew?": false,
-    "hint": "One of the brightest and closest star-forming nebulae."
+    "hint": "One of the brightest and closest star-forming nebulae.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Orion_Nebula"
   },
   {
     "name": "Stephan's Quintet",
@@ -95,7 +104,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/1/15/Stephan%27s_Quintet_X-ray_%2B_Optical.jpg"
     ],
     "isnew?": false,
-    "hint": "Famous compact group of interacting galaxies."
+    "hint": "Famous compact group of interacting galaxies.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Stephan%27s_Quintet"
   },
   {
     "name": "NGC 1333",
@@ -105,7 +115,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/6/61/N1333s.jpg"
     ],
     "isnew?": false,
-    "hint": "Active star-forming region in the Perseus molecular cloud."
+    "hint": "Active star-forming region in the Perseus molecular cloud.",
+    "wikipedia": "https://en.wikipedia.org/wiki/NGC_1333"
   },
   {
     "name": "Baby Boom Galaxy",
@@ -114,7 +125,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/9/9f/Ssc2008-12a_small.jpg"
     ],
     "isnew?": false,
-    "hint": "One of the most starburst-intensive galaxies known."
+    "hint": "One of the most starburst-intensive galaxies known.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Baby_Boom_Galaxy"
   },
   {
     "name": "HL Tauri",
@@ -124,7 +136,8 @@
       "https://www.almaobservatory.org/wp-content/uploads/2017/10/141105_ALMA_HL_02.jpg"
     ],
     "isnew?": false,
-    "hint": "Young star with a beautifully detailed protoplanetary disk."
+    "hint": "Young star with a beautifully detailed protoplanetary disk.",
+    "wikipedia": "https://en.wikipedia.org/wiki/HL_Tauri"
   },
   {
     "name": "L1527",
@@ -134,17 +147,19 @@
       "https://cdn.esawebb.org/archives/images/screen/L1527-1.jpg"
     ],
     "isnew?": false,
-    "hint": "Protostellar system with a thick envelope and disk."
+    "hint": "Protostellar system with a thick envelope and disk.",
+    "wikipedia": "https://en.wikipedia.org/wiki/L1527"
   },
   {
     "name": "NGC 1555",
     "aliases": ["Hind's Variable Nebula", "Sh2-238", "HH 155"],
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/0/04/N1555s.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/04/NGC1555.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/7/76/Ngc1555.jpg"
     ],
     "isnew?": false,
-    "hint": "Reflection nebula linked to a young variable star."
+    "hint": "Reflection nebula linked to a young variable star.",
+    "wikipedia": "https://en.wikipedia.org/wiki/NGC_1555"
   },
   {
     "name": "HH 46/47",
@@ -154,7 +169,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/2/29/HH47_jet.jpg"
     ],
     "isnew?": false,
-    "hint": "Jet from a young star forming Herbig-Haro objects."
+    "hint": "Jet from a young star forming Herbig-Haro objects.",
+    "wikipedia": "https://en.wikipedia.org/wiki/HH_46/47"
   },
   {
     "name": "RCW 38",
@@ -164,7 +180,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nebula_around_star_cluster_RCW_38.jpg/1280px-Nebula_around_star_cluster_RCW_38.jpg"
     ],
     "isnew?": false,
-    "hint": "Dense star cluster with surrounding glowing gas."
+    "hint": "Dense star cluster with surrounding glowing gas.",
+    "wikipedia": "https://en.wikipedia.org/wiki/RCW_38"
   },
   {
     "name": "J122051+491255",
@@ -173,7 +190,8 @@
       "https://i.ibb.co/d0hWPCG8/nasas-webb-telescope-r-1.png"
     ],
     "isnew?": false,
-    "hint": "Compact greenish galaxy known for intense star formation."
+    "hint": "Compact greenish galaxy known for intense star formation.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Green_Pea_galaxies"
   },
   {
     "name": "Messier 87",
@@ -183,7 +201,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Black_hole_-_Messier_87_crop_max_res.jpg/1280px-Black_hole_-_Messier_87_crop_max_res.jpg"
     ],
     "isnew?": false,
-    "hint": "Massive elliptical galaxy with a supermassive black hole."
+    "hint": "Massive elliptical galaxy with a supermassive black hole.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Messier_87"
   },
   {
     "name": "NGC 4038/NGC 4039",
@@ -194,10 +213,9 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Antennae_Galaxies_composite_of_ALMA_and_Hubble_observations.jpg/1280px-Antennae_Galaxies_composite_of_ALMA_and_Hubble_observations.jpg"
     ],
     "isnew?": false,
-    "hint": "Two colliding galaxies forming the Antennae Galaxies."
+    "hint": "Two colliding galaxies forming the Antennae Galaxies.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Antennae_Galaxies"
   },
-
-  // 👇 these next 10 should have "isnew?": true
   {
     "name": "IC 434",
     "aliases": ["Horsehead Nebula"],
@@ -206,7 +224,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/2/2c/Horsehead_and_flame_Nebulea_384mm_scope_Ha-RGB.jpg"
     ],
     "isnew?": true,
-    "hint": "Famous for the dark shape resembling a horse's head."
+    "hint": "Famous for the dark shape resembling a horse's head.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Horsehead_Nebula"
   },
   {
     "name": "NGC 5139",
@@ -216,7 +235,8 @@
       "https://www.constellation-guide.com/wp-content/uploads/2014/08/Omega-Centauri-ESO.webp"
     ],
     "isnew?": true,
-    "hint": "Largest and brightest globular cluster in the Milky Way."
+    "hint": "Largest and brightest globular cluster in the Milky Way.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Omega_Centauri"
   },
   {
     "name": "NGC 6543",
@@ -226,7 +246,8 @@
       "https://science.nasa.gov/wp-content/uploads/2023/04/64884main_image_feature_211_jwfull-jpg.webp"
     ],
     "isnew?": true,
-    "hint": "A planetary nebula with a complex, eye-like structure."
+    "hint": "A planetary nebula with a complex, eye-like structure.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Cat%27s_Eye_Nebula"
   },
   {
     "name": "NGC 6960",
@@ -237,7 +258,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Pickering%27s_Triangle_in_Veil_nebula.jpg/1024px-Pickering%27s_Triangle_in_Veil_nebula.jpg"
     ],
     "isnew?": true,
-    "hint": "Supernova remnant famous for its filamentary structures."
+    "hint": "Supernova remnant famous for its filamentary structures.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Veil_Nebula"
   },
   {
     "name": "NGC 2440",
@@ -247,7 +269,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/7/7e/Centre_of_NGC_2440.jpg"
     ],
     "isnew?": true,
-    "hint": "A planetary nebula with one of the hottest known central stars."
+    "hint": "A planetary nebula with one of the hottest known central stars.",
+    "wikipedia": "https://en.wikipedia.org/wiki/NGC_2440"
   },
   {
     "name": "NGC 6822",
@@ -257,7 +280,8 @@
       "https://upload.wikimedia.org/wikipedia/commons/1/17/NGC_6822_%28potm2309a%29.jpg"
     ],
     "isnew?": true,
-    "hint": "A barred irregular galaxy in the Local Group."
+    "hint": "A barred irregular galaxy in the Local Group.",
+    "wikipedia": "https://en.wikipedia.org/wiki/NGC_6822"
   },
   {
     "name": "SN 1054",
@@ -267,16 +291,18 @@
       "https://public.nrao.edu/wp-content/uploads/2017/03/M1TB2flat_large.jpg"
     ],
     "isnew?": true,
-    "hint": "Remnant of a supernova recorded in 1054 AD."
+    "hint": "Remnant of a supernova recorded in 1054 AD.",
+    "wikipedia": "https://en.wikipedia.org/wiki/Crab_Nebula"
   },
   {
     "name": "NGC 7027",
     "aliases": ["Jewel Bug Nebula", "Magic Carpet Nebula"],
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/NGC7027_-_HST_-_Heic2011c.tif/lossy-page1-1764px-NGC7027_-_HST_-_Heic2011c.tif.jpg",
-      "https://img-new.cgtrader.com/items/4095254/e6d576a52c/large/ngc-7027-deep-sky-object-3d-software-analysis-3d-model-e6d576a52c.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/NGC_7027_-_Hubble_WikiSky.jpg/1280px-NGC_7027_-_Hubble_WikiSky.jpg"
     ],
     "isnew?": true,
-    "hint": "Compact planetary nebula with a bright central star."
+    "hint": "Compact planetary nebula with complex structures.",
+    "wikipedia": "https://en.wikipedia.org/wiki/NGC_7027"
   }
 ]
