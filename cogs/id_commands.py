@@ -226,20 +226,28 @@ class IDCommands(commands.Cog):
         # Mustard image response
         if "mustard" in message.content.lower():
             embed = discord.Embed(title="")
-            embed.set_image(url="https://i.ytimg.com/vi/eVPp3fJTZvc/maxresdefault.jpg")
+            embed.set_image(
+                url="https://i.ytimg.com/vi/eVPp3fJTZvc/maxresdefault.jpg")
             await message.channel.send(embed=embed)
             return
 
         # Mango image response
         if "mango" in message.content.lower():
             embed = discord.Embed(title="")
-            embed.set_image(url="https://i.ytimg.com/vi/eVPp3fJTZvc/maxresdefault.jpg")
+            embed.set_image(
+                url="https://i.ytimg.com/vi/eVPp3fJTZvc/maxresdefault.jpg")
             await message.channel.send(embed=embed)
             return
 
         # 67 image response
         if "67" in message.content:
-            embed = discord.Embed(title="Did someone say 67?")
+            embed = discord.Embed(title="67?")
+            await message.channel.send(embed=embed)
+            return
+
+        # 67 image response
+        if "Astrobo" and "sybau" in message.content:
+            embed = discord.Embed(title="🥺")
             await message.channel.send(embed=embed)
             return
 
