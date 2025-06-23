@@ -134,7 +134,7 @@
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/HL_Tau_protoplanetary_disk.jpg/1280px-HL_Tau_protoplanetary_disk.jpg",
       "https://www.almaobservatory.org/wp-content/uploads/2017/10/141105_ALMA_HL_02.jpg"
-    true
+    ],
     "isnew?": true,
     "hint": "Young star with a beautifully detailed protoplanetary disk.",
     "wikipedia": "https://en.wikipedia.org/wiki/HL_Tauri"
