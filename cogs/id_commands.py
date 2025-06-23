@@ -237,6 +237,12 @@ class IDCommands(commands.Cog):
             await message.channel.send(embed=embed)
             return
 
+        # 67 image response
+        if "67" in message.content:
+            embed = discord.Embed(title="Did someone say 67?")
+            await message.channel.send(embed=embed)
+            return
+
         ctx = await self.bot.get_context(message)
         if ctx.command is not None:
             return
