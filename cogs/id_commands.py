@@ -251,6 +251,11 @@ class IDCommands(commands.Cog):
             await message.channel.send(embed=embed)
             return
 
+        # Fuck you response
+        if "a.fuck you" in message.content.lower():
+            await message.channel.send("fuck you")
+            return
+
         ctx = await self.bot.get_context(message)
         if ctx.command is not None:
             return
