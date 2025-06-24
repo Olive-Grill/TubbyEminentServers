@@ -219,8 +219,11 @@ class IDCommands(commands.Cog):
         if content in ("Astroboちゃん!", "Nathanielちゃん!"):
             await message.channel.send("はい~!")
             return
-        if content == "何が好き?":
-            await message.channel.send("チョコミント よりも あ・な・た 💖")
+        if content in ("何が好き?", "nani ga suki?"):
+            await message.channel.send("チョコミント 🍨 よりも あ・な・た 💖")
+            return
+        if content in ("ばかだな!", "baka da na!"):
+            await message.channel.send("🥺")
             return
 
         # Mustard image response
@@ -246,7 +249,8 @@ class IDCommands(commands.Cog):
             return
 
         # Astrobo sybau response
-        if "astrobo" in message.content.lower() and "sybau" in message.content.lower():
+        if "astrobo" in message.content.lower(
+        ) and "sybau" in message.content.lower():
             embed = discord.Embed(title="🥺")
             await message.channel.send(embed=embed)
             return
